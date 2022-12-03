@@ -13,9 +13,6 @@ const Folder = ({ handleInsertNode = () => {}, explorerData }) => {
   const [showCreateHandlers, setShowCreateHandlers] = useState(false);
   const [inputBox, setInputBox] = useState(inputBoxInitialData);
 
-  const expandHandler = () => {
-    setExpandFolder(!expandFolder);
-  };
   const handleCreateNewNode = () => {
     if (inputBox.value.trim()) {
       handleInsertNode(explorerData.id, inputBox.value, inputBox.isFolder);
@@ -29,7 +26,7 @@ const Folder = ({ handleInsertNode = () => {}, explorerData }) => {
       <div className="folder" style={{ marginLeft: "15px" }}>
         <div
           className="folder-name"
-          onClick={expandHandler}
+          onClick={setExpandFolder(!expandFolder)}
           onMouseEnter={() => setShowCreateHandlers(true)}
           onMouseLeave={() => setShowCreateHandlers(false)}
         >
@@ -51,8 +48,7 @@ const Folder = ({ handleInsertNode = () => {}, explorerData }) => {
                   });
                 }}
               >
-                {" "}
-                📂{" "}
+                📂
               </span>
               <span
                 role="img"
@@ -66,8 +62,7 @@ const Folder = ({ handleInsertNode = () => {}, explorerData }) => {
                   });
                 }}
               >
-                {" "}
-                📄{" "}
+                📄
               </span>
             </div>
           )}
