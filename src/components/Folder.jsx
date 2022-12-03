@@ -26,7 +26,7 @@ const Folder = ({ handleInsertNode = () => {}, explorerData }) => {
       <div className="folder" style={{ marginLeft: "15px" }}>
         <div
           className="folder-name"
-          onClick={setExpandFolder(!expandFolder)}
+          onClick={()=>setExpandFolder(!expandFolder)}
           onMouseEnter={() => setShowCreateHandlers(true)}
           onMouseLeave={() => setShowCreateHandlers(false)}
         >
